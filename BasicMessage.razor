@@ -1,0 +1,21 @@
+﻿
+<h3>BasicMessage</h3>
+
+<p>Now is: @_now</p>
+
+<p>Message: @Message</p>
+
+@code {
+
+    [Parameter]
+    public string Message { get; set; }
+
+    private DateTime _now;
+
+    protected override Task OnInitializedAsync()
+    {
+        _now = DateTime.UtcNow;
+
+        return base.OnInitializedAsync();
+    }
+}
